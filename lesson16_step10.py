@@ -8,15 +8,15 @@ try:
     browser.get(link)
 
     # Ваш код, который заполняет обязательные поля
-    input1 = browser.find_element(by='css selector', value='div.first_block input.form-control.first')
+    input1 = browser.find_element(By.CSS_SELECTOR, 'div.first_block input.form-control.first')
     input1.send_keys("Ivan")
-    input2 = browser.find_element(by='css selector', value='div.first_block input.form-control.second')
+    input2 = browser.find_element(By.CSS_SELECTOR, 'div.first_block input.form-control.second')
     input2.send_keys("Petrov")
-    input3 = browser.find_element(by='css selector', value='div.first_block input.form-control.third')
+    input3 = browser.find_element(By.CSS_SELECTOR, 'div.first_block input.form-control.third')
     input3.send_keys("ivanpetrov@mail.ru")  
 
     # Отправляем заполненную форму
-    button = browser.find_element(by='css selector', value='button.btn')
+    button = browser.find_element(By.CSS_SELECTOR, 'button.btn')
     button.click()
 
     # Проверяем, что смогли зарегистрироваться
@@ -24,7 +24,7 @@ try:
     time.sleep(1)
 
     # находим элемент, содержащий текст
-    welcome_text_elt = browser.find_element(by='tag name', value='h1')
+    welcome_text_elt = browser.find_element(By.TAG_NAME, 'h1')
     # записываем в переменную welcome_text текст из элемента welcome_text_elt
     welcome_text = welcome_text_elt.text
 
